@@ -15,7 +15,10 @@ import { SeedService } from "./entities/seed/seed.service";
   imports: [
     TypeOrmModule.forRoot({
       type: "sqlite",
-      database: "travel_booking.sqlite",
+      database:
+        process.env.NODE_ENV === "production"
+          ? "/tmp/travel_booking.sqlite"
+          : "travel_booking.sqlite",
       entities: [User, TravelPackage, Booking, Traveller, Payment, Review],
       synchronize: true,
     }),
