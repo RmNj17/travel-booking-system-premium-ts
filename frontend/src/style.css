@@ -1,0 +1,404 @@
+:root {
+  color-scheme: light;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f5f7fb;
+}
+
+.appShell {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(21, 94, 239, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 5%,
+      rgba(14, 165, 233, 0.13),
+      transparent 28%
+    ),
+    linear-gradient(180deg, #f8fbff 0%, #f3f6fb 42%, #eef2f7 100%);
+}
+
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 76px;
+  padding: 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.05);
+}
+
+.brandBlock {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brandMark {
+  height: 46px;
+  width: 46px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 20px;
+  background: linear-gradient(135deg, #155eef, #0ea5e9);
+  box-shadow: 0 16px 30px rgba(21, 94, 239, 0.28);
+}
+
+.brandTitle,
+.brandSub {
+  display: block;
+  line-height: 1.2;
+}
+
+.brandTitle {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.brandSub {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.heroSection {
+  max-width: 1200px;
+  margin: 38px auto 0;
+  padding: 38px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(360px, 0.75fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.heroContent {
+  min-height: 360px;
+  padding: 46px;
+  border-radius: 32px;
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(30, 64, 175, 0.88)),
+    url("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.24);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent::after {
+  content: "";
+  position: absolute;
+  inset: auto -60px -120px auto;
+  width: 260px;
+  height: 260px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.heroContent h1,
+.heroContent .ant-typography {
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.heroContent h1 {
+  max-width: 750px;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  margin: 18px 0;
+}
+
+.heroContent p.ant-typography {
+  max-width: 670px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.heroTag {
+  border: 0;
+  padding: 6px 10px;
+  font-weight: 700;
+}
+
+.heroSearch {
+  width: min(440px, 82vw);
+  border: 0;
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.2);
+}
+
+.signinCard {
+  border-radius: 30px !important;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.signinCard .ant-card-body {
+  padding: 28px;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 38px 42px;
+}
+
+.statsRow {
+  margin-bottom: 30px;
+}
+
+.statCard,
+.tableCard,
+.packageCard,
+.signinCard {
+  border: 1px solid rgba(148, 163, 184, 0.17) !important;
+}
+
+.statCard {
+  box-shadow: 0 15px 38px rgba(15, 23, 42, 0.06);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin: 30px 0 18px;
+}
+
+.sectionHeader h2 {
+  margin: 0 0 4px;
+  letter-spacing: -0.035em;
+}
+
+.packageCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 26px !important;
+  overflow: hidden;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.packageCard .ant-card-cover {
+  flex: 0 0 auto;
+}
+
+.packageCard .ant-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.packageCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.14);
+}
+
+.packageCard .ant-card-cover img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.packageCard .ant-card-actions {
+  background: linear-gradient(180deg, #fbfdff 0%, #f4f8ff 100%);
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  padding: 10px 8px;
+  margin-top: auto;
+}
+
+.packageCard .ant-card-actions > li {
+  margin: 0;
+}
+
+.packageCard .ant-card-actions button {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.destinationTag {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-weight: 600;
+}
+
+.cardMeta .ant-descriptions-item-label,
+.cardMeta .ant-descriptions-item-content {
+  color: #475569;
+}
+
+.miniAmenities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.miniAmenityBox {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.miniAmenityLabel {
+  color: #475569;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.miniAmenityValue {
+  color: #0f172a;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.bookingHighlights {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.bookingHighlightCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.bookingHighlightText {
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.cardTitle {
+  min-height: 56px;
+  margin: 0 !important;
+  letter-spacing: -0.025em;
+}
+
+.itineraryText {
+  color: #64748b;
+  min-height: 44px;
+}
+
+.bookingSection {
+  margin-top: 36px;
+}
+
+.tableCard {
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  border-radius: 28px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.tableCard .ant-card-body {
+  padding: 18px;
+}
+
+.tableCard .ant-table-thead > tr > th {
+  background: #f8fafc;
+  color: #0f172a;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.tableCard .ant-table-tbody > tr > td {
+  background: #ffffff;
+}
+
+.sectionHeader .ant-typography {
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+.drawerImage {
+  width: 100%;
+  height: 210px;
+  border-radius: 22px;
+  object-fit: cover;
+  margin-bottom: 18px;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+}
+
+.footer {
+  text-align: center;
+  color: #64748b;
+  background: transparent;
+  padding-bottom: 30px;
+}
+
+.ant-notification-notice {
+  border-radius: 18px !important;
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.16) !important;
+}
+
+@media (max-width: 900px) {
+  .siteHeader {
+    padding: 0 18px;
+  }
+
+  .desktopActions .ant-typography {
+    display: none;
+  }
+
+  .heroSection {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .heroContent {
+    padding: 28px;
+    min-height: auto;
+  }
+
+  .mainContent {
+    padding: 0 20px 34px;
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
